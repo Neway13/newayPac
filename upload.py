@@ -7,7 +7,7 @@ import sys
 import os
 import time
 import tkinter
- 
+import pyperclip 
 rootDir='C:\\document\\IdeaProjects\\newaycdn\\'
 def openDialog():
     win=tkinter.Tk()
@@ -29,19 +29,21 @@ def  go(win,filename_entry):
     win.quit()
     win.destroy()
     
-def savePic(filename) : 
-    dirs=rootDir+time.strftime("%Y_%m_%d", time.localtime())
-    if not os.path.exists(dirs):
-        os.makedirs(dirs)
+def savePic(filename) :
+    dirname=time.strftime("%Y_%m_%d", time.localtime())
+    dir=rootDir+dirname
+    if not os.path.exists(dir):
+        os.makedirs(dir)
     if filename == '' :
         filename=str(time.time())
-    fname=dirs+'\\'+filename+'.png'
+    fname=dir+'\\'+filename+'.png'
     if os.path.exists(fname):
         alert("文件已经存在，请重新输入！")
         return False  
     image = ImageGrab.grabclipboard() # 获取剪贴板文件
     image.save(fname)
     os.system("cd /d "+rootDir+" && git add * && git commit -m  ':)' && git push &&  exit")
+    pyperclip.copy("https://cdn.jsdelivr.net/gh/Neway13/newaycdn/"+dirname+"/"+filename)
               
 def alert(str):
     win=tkinter.Tk()
