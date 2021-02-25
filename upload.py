@@ -7,8 +7,7 @@ import sys
 import os
 import time
 import tkinter
-import subprocess
-
+ 
 rootDir='C:\\document\\IdeaProjects\\newaycdn\\'
 def openDialog():
     win=tkinter.Tk()
@@ -42,8 +41,8 @@ def savePic(filename) :
         return False  
     image = ImageGrab.grabclipboard() # 获取剪贴板文件
     image.save(fname)
-    subprocess.call("cd /d "+rootDir+" && git add * && git commit -m  ':)' && git push &&  exit", shell=True)
-    
+    os.system("cd /d "+rootDir+" && git add * && git commit -m  ':)' && git push &&  exit")
+              
 def alert(str):
     win=tkinter.Tk()
     win.title("Save Image")
