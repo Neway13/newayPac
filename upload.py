@@ -43,7 +43,7 @@ def savePic(filename) :
     image = ImageGrab.grabclipboard() # 获取剪贴板文件
     image.save(fname)
     os.system("cd /d "+rootDir+" && git add * && git commit -m  ':)' && git push &&  exit")
-    pyperclip.copy("https://cdn.jsdelivr.net/gh/Neway13/newaycdn/"+dirname+"/"+filename)
+    pyperclip.copy("https://cdn.jsdelivr.net/gh/Neway13/newaycdn/"+dirname+"/"+filename+".png")
               
 def alert(str):
     win=tkinter.Tk()
