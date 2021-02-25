@@ -7,7 +7,8 @@ import sys
 import os
 import time
 import tkinter
-import subprocess # 用来执行powershell
+import subprocess
+
 rootDir='C:\\document\\IdeaProjects\\newaycdn\\'
 def openDialog():
     win=tkinter.Tk()
@@ -41,7 +42,7 @@ def savePic(filename) :
         return False  
     image = ImageGrab.grabclipboard() # 获取剪贴板文件
     image.save(fname)
-    os.system("cd /d "+rootDir+" && git add * && git commit -m  ':)' && git push &&  exit")
+    subprocess.call("cd /d "+rootDir+" && git add * && git commit -m  ':)' && git push &&  exit", shell=True)
     
 def alert(str):
     win=tkinter.Tk()
