@@ -1,0 +1,17 @@
+var domains={
+"google.com":1,
+"youtube.com":1,
+"facebook.com":1,
+"getpostman.com":1,
+"postman.co":1,
+"github.com":1,
+"":""};
+function FindProxyForURL(d,a){
+    
+    var c=a.split(".");
+    for(b=c.length-1;b>=0;b--)
+        if(domains.hasOwnProperty(c.slice(b).join(".")))
+            return "PROXY 127.0.0.1:8998";
+    return "DIRECT"; 
+}
+  
