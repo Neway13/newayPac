@@ -10,7 +10,7 @@ function FindProxyForURL(d,a){
     var c=a.split(".");
     for(b=c.length-1;b>=0;b--)
         if(domains.hasOwnProperty(c.slice(b).join(".")))
-            return "PROXY 127.0.0.1:8998";
+            return "PROXY 192.168.100.3:8998";
     return "DIRECT"; 
 }
   
