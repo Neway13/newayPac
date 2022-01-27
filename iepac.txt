@@ -5,12 +5,10 @@ var domains={
 "getpostman.com":1,
 "postman.co":1,
 "":""};
-function FindProxyForURL(d,a){
-    //dfa333333
-    var c=a.split(".");
-    for(b=c.length-1;b>=0;b--)
-        if(domains.hasOwnProperty(c.slice(b).join(".")))
+function FindProxyForURL(url,host){
+    var array=host.split(".");
+    for(var i=array.length-1;i>=0;i--)
+        if(domains.hasOwnProperty(array.slice(i).join(".")))
             return "PROXY 192.168.100.3:8998";
     return "DIRECT"; 
 }
-  
