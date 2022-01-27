@@ -6,7 +6,7 @@ var domains={
 "postman.co":1,
 "":""};
 function FindProxyForURL(d,a){
-    
+    //dfa
     var c=a.split(".");
     for(b=c.length-1;b>=0;b--)
         if(domains.hasOwnProperty(c.slice(b).join(".")))
